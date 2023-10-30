@@ -21,7 +21,7 @@ This repo contains the content for week 6
 
 When a user opens the webpage, they will see a search bar at the top of the page. The user can search any city of their choice and will be shown the current weather and a 5 day forecast that contains weather conditions, temperatures, windspeeds, and humidity percentages. After a user searches a city, that city will appear in their search history as a button, and the user is able to click on a city's button to be shown its weather again.
 
- ![screenshot of the webpage](./assets/images/Weather Application.png)
+ ![screenshot of the webpage](./assets/images/Weather-App.png)
 
 ## Credits
 
