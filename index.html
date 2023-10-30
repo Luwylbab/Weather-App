@@ -9,19 +9,24 @@
   <title>Weather Application</title>
 </head>
 <body>
-  <header>
-    <h1 class="center-align">Weather Dashboard</h1>
+  <header class="blue-grey">
+    <h1 class="center-align bold">Weather Dashboard</h1>
   </header>
   <div class="row">
-    <form class="col s12 l3 m4" id="search-form">
+    <form class="col s12 l6" id="search-form">
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s9">
           <input type="text" id="city-input" class="validate">
           <label for="city-input">City</label>
+        </div>
+        <div class="input-field col s3">
           <button type="submit" class="btn">Search</button>
         </div>
       </div>
     </form>
+  </div>
+  <div class="row">
+    <div class="col s12" id="buttons-container"></div>
   </div>
 
   <div class="row" id="weather-info" style="display: none;">
