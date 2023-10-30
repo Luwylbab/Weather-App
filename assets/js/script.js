@@ -11,8 +11,21 @@ form.addEventListener('submit', function(event) {
   event.preventDefault();
 
   var cityName = cityInput.value;
-    console.log("City: ", cityName)
-    searchCity(cityName)
+
+  searchCity(cityName);
+  localStorage.setItem("City", cityName);
+
+  var cityLoc = localStorage.getItem("City");
+  var button = document.createElement("button");
+
+  button.classList.add("btn");
+  button.textContent = cityLoc;
+
+  button.addEventListener("click", function() {
+    searchCity(cityLoc);
+  });
+
+  document.getElementById("buttons-container").appendChild(button);
 });
 
 function searchCity (cityName) {
