@@ -6,6 +6,7 @@ var temperatureEl = document.getElementById('temperature');
 var humidityEl = document.getElementById('humidity');
 var windSpeedEl = document.getElementById('wind-speed');
 var forecastElement = document.getElementById('forecast');
+var cityElement = document.getElementById("city");
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -17,6 +18,9 @@ form.addEventListener('submit', function(event) {
 
   var cityLoc = localStorage.getItem("City");
   var button = document.createElement("button");
+  var textNode = document.createTextNode(cityLoc);
+
+  cityElement.appendChild(textNode);
 
   button.classList.add("btn");
   button.textContent = cityLoc;
@@ -77,6 +81,9 @@ function searchCity (cityName) {
         var lowTemp = forecastData[i].main.temp_min;
         var windSpeed = forecastData[i].wind.speed;
         var humidity = forecastData[i].main.humidity;
+        var weatherIcon = forecastData[i].weather[0].icon
+        var iconURL = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+        
   
         // Creates the cards for the 5 day forecast based on each array
         var forecastCard = document.createElement('div');
@@ -85,6 +92,7 @@ function searchCity (cityName) {
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title">${forecastDate}</span>
+              <img src="${iconURL}"></img>
               <p>High Temp: ${highTemp}°F</p>
               <p>Low Temp: ${lowTemp}°F</p>
               <p>Wind Speed: ${windSpeed} m/s</p>
